@@ -1,10 +1,16 @@
 class Machine extends React.Component {
 	render() {
-        const props = this.props;
+        // const props = this.props;
+        const {s1, s2, s3} = this.props;
 
-        function didTheyWin(props) {
-            if (props.s1 === props.s2 &&  props.s2 === props.s3){
-            return <p> We have a winner</p>;
+        function showIcons() {
+            const icons = ["🍇", "🍒", "🍑"];
+            return `${icons[s1]}  ${icons[s2]}  ${icons[s3]}`
+        };
+
+        function didTheyWin() {
+            if (s1 === s2 &&  s2 === s3){
+            return <p>We have a winner</p>;
              } else {
               return <p> You lose </p>
           }
@@ -13,8 +19,8 @@ class Machine extends React.Component {
         
 		return (
 			<div>
-				<p>{props.s1}{props.s2}{props.s3}</p>
-                {didTheyWin(props)}
+				{showIcons()}
+                {didTheyWin()}
 			</div>
 		);
 	}
