@@ -1,6 +1,5 @@
 class Machine extends React.Component {
 	render() {
-        // const props = this.props;
         const {s1, s2, s3} = this.props;
 
         function showIcons() {
